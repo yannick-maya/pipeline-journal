@@ -1,0 +1,24 @@
+version: '3.7'
+
+services:
+  mongodb:
+    image: mongo:latest
+    restart: always
+    volumes:
+      - mongodb_data:/data/db
+
+  airflow:
+    image: apache/airflow:2.2.0
+    restart: always
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+    volumes:
+      - airflow_data:/usr/local/airflow
+
+  spark:
+    image: bitnami/spark:latest
+    restart: always
+
+volumes:
+  mongodb_data:
+  airflow_data:
