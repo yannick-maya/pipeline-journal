@@ -1,0 +1,9 @@
+# Requirements for Data Pipeline Project
+
+apache-airflow
+pyspark
+pandas
+pymongo
+streamlit
+faker
+docker
